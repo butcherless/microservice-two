@@ -1,0 +1,27 @@
+server:
+  port: 8082
+  servlet:
+    context-path: /ms-two
+
+logging:
+  level:
+    root: info
+    org.springframework.boot: info
+    dev.cmartin.microservicetwo: debug
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: [ health,loggers,env,mappings ]
+
+service:
+  countries:
+    file: "airports.json"
+
+spring:
+  application:
+    name: "ms-two"
+  devtools:
+    restart:
+      enabled: true
