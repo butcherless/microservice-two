@@ -1,0 +1,43 @@
+### Retrieve all airports sorted by name (default limit)
+GET http://localhost:8082/ms-two/airports/
+Accept: application/json
+
+### Retrieve all airports sorted by iata code (default limit)
+GET http://localhost:8082/ms-two/airports?sortedBy=iata
+Accept: application/json
+
+### Retrieve all airports sorted by icao code (default limit)
+GET http://localhost:8082/ms-two/airports?sortedBy=icao
+Accept: application/json
+
+### Retrieve an airport by its IATA code
+GET http://localhost:8082/ms-two/airports/iata/mad
+Accept: application/json
+
+### Retrieve an airport by its ICAO code
+GET http://localhost:8082/ms-two/airports/icao/lemd
+Accept: application/json
+
+### Retrieve all airports containing the name
+GET http://localhost:8082/ms-two/airports?name=Barajas
+Accept: application/json
+
+### Retrieve all airports containing the name
+GET http://localhost:8082/ms-two/airports?name=International
+Accept: application/json
+
+### GET Not Found for invalid iata airport code
+GET http://localhost:8082/ms-two/airports/iata/ab
+Accept: application/json
+
+### Not Found for invalid icao airport code
+GET http://localhost:8082/ms-two/airports/icao/tfn
+Accept: application/json
+
+### Not Found for missing iata airport code
+GET http://localhost:8082/ms-two/airports/iata/zzz
+Accept: application/json
+
+### Not Found for missing icao airport code
+GET http://localhost:8082/ms-two/airports/icao/zzzz
+Accept: application/json

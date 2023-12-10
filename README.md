@@ -47,11 +47,12 @@ Dependency updates
 
 ## HTTP client commands [`httpie`]
 
-| Command                                         | Description                                               |
-|-------------------------------------------------|-----------------------------------------------------------|
-| `http -v ':8082/ms-two/airports'`               | Retrieve all airports sorted by name (default limit)      |
-| `http -v ':8082/ms-two/airports?sortedBy=iata'` | Retrieve all airports sorted by iata code (default limit) |
-| `http -v ':8082/ms-two/airports?sortedBy=icao'` | Retrieve all airports sorted by icao code (default limit) |
-| `http -v ':8082/ms-two/airports/iata/mad'`      | Retrieve an airport by its IATA code                      |
-| `http -v ':8082/ms-two/airports/icao/lemd'`     | Retrieve an airport by its ICAO code                      |
-| `http -v ':8082/ms-two/airports?name=Barajas'`  | Retrieve all airports containing the name                 |
+| Command                                              | Description                                               |
+|------------------------------------------------------|-----------------------------------------------------------|
+| `http -v ':8082/ms-two/airports'`                    | Retrieve all airports sorted by name (default limit)      |
+| `http -v ':8082/ms-two/airports?sortedBy=iata'`      | Retrieve all airports sorted by iata code (default limit) |
+| `http -v ':8082/ms-two/airports?sortedBy=icao'`      | Retrieve all airports sorted by icao code (default limit) |
+| `http -v ':8082/ms-two/airports/iata/mad'`           | Retrieve an airport by its IATA code                      |
+| `http -v ':8082/ms-two/airports/icao/lemd'`          | Retrieve an airport by its ICAO code                      |
+| `http -v ':8082/ms-two/airports?name=Barajas'`       | Retrieve all airports containing the name case single     |
+| `http -v ':8082/ms-two/airports?name=International'` | Retrieve all airports containing the name case multiple   |
