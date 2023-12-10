@@ -73,10 +73,18 @@ class JsonAirportServiceTest {
     }
 
     @Test
-    fun `should retrieve an empty stream for missing airport`() {
+    fun `should retrieve an empty stream for missing airport by name`() {
         StepVerifier
             .create(service.findByName("missing"))
             .verifyComplete()
     }
+
+    @Test
+    fun `should retrieve an empty stream for missing airport by icao code`() {
+        StepVerifier
+            .create(service.findByIcaoCode("zzzz"))
+            .verifyComplete()
+    }
+
 }
 
