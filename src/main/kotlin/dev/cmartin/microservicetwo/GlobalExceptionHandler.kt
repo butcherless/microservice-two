@@ -39,9 +39,10 @@ class GlobalExceptionHandler {
             }
             .joinToString(", ")
 
-        val errorResponse = ErrorResponse(errorMessage, Instant.now())
-
-        return ResponseEntity(errorResponse, HttpStatus.BAD_REQUEST)
+        return ResponseEntity(
+            ErrorResponse(errorMessage, Instant.now()),
+            HttpStatus.BAD_REQUEST
+        )
     }
 
     companion object {
