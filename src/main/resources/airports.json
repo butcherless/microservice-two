@@ -1,42 +1,62 @@
 [
   {
-    "code": "es",
-    "name": "Spain"
+    "countryCode": "es",
+    "name": "Tenerife Norte",
+    "iataCode": "TFN",
+    "icaoCode": "GXCO"
   },
   {
-    "code": "pt",
-    "name": "Portugal"
+    "countryCode": "es",
+    "name": "Madrid Barajas",
+    "iataCode": "MAD",
+    "icaoCode": "LEMD"
   },
   {
-    "code": "it",
-    "name": "Italy"
+    "countryCode": "es",
+    "name": "Barcelona International",
+    "iataCode": "BCN",
+    "icaoCode": "LEBL"
   },
   {
-    "code": "fr",
-    "name": "France"
+    "countryCode": "uk",
+    "name": "London Heathrow",
+    "iataCode": "LHR",
+    "icaoCode": "EGLL"
   },
   {
-    "code": "de",
-    "name": "Germany"
+    "countryCode": "uk",
+    "name": "London Gatwick",
+    "iataCode": "LGW",
+    "icaoCode": "EGKK"
   },
   {
-    "code": "uk",
-    "name": "United Kingdom"
+    "countryCode": "br",
+    "name": "Presidente Juscelino Kubistschek International",
+    "iataCode": "BSB",
+    "icaoCode": "SBBR"
   },
   {
-    "code": "us",
-    "name": "United States"
+    "countryCode": "br",
+    "name": "Deputado Luiz Eduardo Magalhães International",
+    "iataCode": "SSA",
+    "icaoCode": "SBSV"
   },
   {
-    "code": "ca",
-    "name": "Canada"
+    "countryCode": "pe",
+    "name": "Aeropuerto Internacional Jorge Chavez",
+    "iataCode": "LIM",
+    "icaoCode": "SPJC"
   },
   {
-    "code": "br",
-    "name": "Brasil"
+    "countryCode": "br",
+    "name": "Tom Jobim International Airport",
+    "iataCode": "GIG",
+    "icaoCode": "SBGL"
   },
   {
-    "code": "pe",
-    "name": "Perú"
+    "countryCode": "pt",
+    "name": "Humberto Delgado Airport",
+    "iataCode": "LIS",
+    "icaoCode": "LPPT"
   }
 ]

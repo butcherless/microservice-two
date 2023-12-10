@@ -1,6 +1,6 @@
 package dev.cmartin.microservicetwo
 
-import dev.cmartin.microservicetwo.Model.Country
+import dev.cmartin.microservicetwo.Model.Airport
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Value
@@ -16,16 +16,16 @@ class ServiceConfiguration {
     val logger: Logger = LoggerFactory.getLogger(ServiceConfiguration::class.java)
 
     @Value("\${service.countries.file}")
-    private lateinit var countriesFile: String
+    private lateinit var airportsFile: String
 
     @Bean
-    fun countryMap(): ConcurrentMap<String, Country> {
-        this.logger.debug("reading countries from file: $countriesFile")
+    fun airportMap(): ConcurrentMap<String, Airport> {
+        this.logger.debug("reading airports from file: $airportsFile")
 
         return ConcurrentHashMap(
             ApplicationUtils
-                .readJsonFile(countriesFile)
-                .associateBy { it.code }
+                .readJsonFile(airportsFile)
+                .associateBy { it.iataCode }
         )
     }
 }

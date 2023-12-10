@@ -47,10 +47,11 @@ Dependency updates
 
 ## HTTP client commands [`httpie`]
 
-| Command                                         | Description                                          |
-|-------------------------------------------------|------------------------------------------------------|
-| `http -v ':8081/ms-two/airports'`               | Retrieve all airports sorted by name (default limit) |
-| `http -v ':8081/ms-two/airports?sortedBy=code'` | Retrieve all airports sorted by code (default limit) |
-| `http -v ':8081/ms-two/airports/mad'`           | Retrieve a airport by its IATA code                  |
-| `http -v ':8081/ms-two/airports/lemd'`          | Retrieve a airport by its ICAO code                  |
-| `http -v ':8081/ms-two/airports?name=Barajas'`  | Retrieve a airport by its name                       |
+| Command                                         | Description                                               |
+|-------------------------------------------------|-----------------------------------------------------------|
+| `http -v ':8082/ms-two/airports'`               | Retrieve all airports sorted by name (default limit)      |
+| `http -v ':8082/ms-two/airports?sortedBy=iata'` | Retrieve all airports sorted by iata code (default limit) |
+| `http -v ':8082/ms-two/airports?sortedBy=icao'` | Retrieve all airports sorted by icao code (default limit) |
+| `http -v ':8082/ms-two/airports/iata/mad'`      | Retrieve an airport by its IATA code                      |
+| `http -v ':8082/ms-two/airports/icao/lemd'`     | Retrieve an airport by its ICAO code                      |
+| `http -v ':8082/ms-two/airports?name=Barajas'`  | Retrieve all airports containing the name                 |

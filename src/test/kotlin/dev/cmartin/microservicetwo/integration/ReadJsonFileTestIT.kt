@@ -1,31 +1,31 @@
 package dev.cmartin.microservicetwo.integration
 
-import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
-import com.fasterxml.jackson.module.kotlin.readValue
+import dev.cmartin.microservicetwo.ApplicationUtils
+import dev.cmartin.microservicetwo.Model.Airport
+import dev.cmartin.microservicetwo.TestData.mad
+import dev.cmartin.microservicetwo.TestData.tfn
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
-import org.springframework.core.io.ClassPathResource
 
 class ReadJsonFileTestIT {
 
-    data class Country(val code: String, val name: String)
+    private val path = "test-airports.json"
+    private fun readJsonFile(): Map<String, Airport> {
+        val airports: List<Airport> =
+            ApplicationUtils.readJsonFile(path)
 
-    fun readJsonFile(path: String): Map<String, String> {
-        val countries: List<Country> =
-            jacksonObjectMapper()
-                .readValue(ClassPathResource(path).inputStream)
-
-        return countries.associate { it.code to it.name }
+        return airports.associateBy { it.iataCode }
     }
 
     @Test
-    fun `read all countries`() {
-        val path = "test-airports.json"
-        val es = Country("es", "Spain")
-        val pt = Country("pt", "Portugal")
-        val expectedList = mapOf(es.code to es.name, pt.code to pt.name)
-        val result = readJsonFile(path)
+    fun `read all airports`() {
 
-        assertEquals(expectedList, result)
+        val airportMap = mapOf(
+            mad.iataCode to mad,
+            tfn.iataCode to tfn
+        )
+        val result = readJsonFile()
+
+        assertEquals(airportMap, result)
     }
 }

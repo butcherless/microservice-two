@@ -1,11 +1,20 @@
 package dev.cmartin.microservicetwo
 
-import dev.cmartin.microservicetwo.Model.Country
+import dev.cmartin.microservicetwo.AirportService.Companion.SortableProperties
+import dev.cmartin.microservicetwo.Model.Airport
 
 object TestData {
-    val spain = Country("es", "Spain")
-    val france = Country("fr", "France")
-    val countries: List<Country> = listOf(france, spain)
-    val sortByName = CountryService.Companion.SortableProperties.NAME
-    val sortByCode = CountryService.Companion.SortableProperties.CODE
+    const val SPAIN_CODE = "es"
+    const val MAD_IATA = "MAD"
+    const val MAD_ICAO = "LEMD"
+    const val TFN_IATA = "TFN"
+    const val TFN_ICAO = "GXCO"
+
+    val mad = Airport(MAD_IATA, MAD_ICAO, "Madrid Barajas", SPAIN_CODE)
+    val tfn = Airport(TFN_IATA, TFN_ICAO, "Tenerife Norte", SPAIN_CODE)
+    val airports: List<Airport> = listOf(mad, tfn)
+    val sortByName = SortableProperties.NAME
+    val sortByIataCode = SortableProperties.IATA
+    val sortByIcaoCode = SortableProperties.ICAO
 }
+

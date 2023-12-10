@@ -1,10 +1,14 @@
 [
   {
-    "code": "es",
-    "name": "Spain"
+    "countryCode": "es",
+    "name": "Tenerife Norte",
+    "iataCode": "TFN",
+    "icaoCode": "GXCO"
   },
   {
-    "code": "pt",
-    "name": "Portugal"
+    "countryCode": "es",
+    "name": "Madrid Barajas",
+    "iataCode": "MAD",
+    "icaoCode": "LEMD"
   }
 ]

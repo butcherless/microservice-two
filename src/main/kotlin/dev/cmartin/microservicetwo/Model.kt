@@ -1,34 +1,32 @@
 package dev.cmartin.microservicetwo
 
+import jakarta.validation.constraints.Size
 import java.time.Instant
 
 object Model {
-    @JvmInline
-    value class Code(val value: String)
 
-    @JvmInline
-    value class Name(val value: String)
+
+    data class Airport(
+        val iataCode: String,
+        val icaoCode: String,
+        val name: String,
+        val countryCode: String
+    )
 
     /**
-     * Represents a country with its code and name.
+     * AirportNotFoundException is an exception that is thrown when an airport is not found.
      *
-     * @property code The code of the country.
-     * @property name The name of the country.
+     * @param message the error message describing the reason for the exception.
      */
-    data class Country(val code: String, val name: String)
+    data class AirportNotFoundException(override val message: String) : RuntimeException(message)
 
     /**
-     * Exception thrown when a country is not found.
-     *
+     * Represents an error response containing a message and an instant.
      * @property message The error message.
+     * @property instant The instant when the error occurred.
      */
-    data class CountryNotFoundException(override val message: String) : RuntimeException(message)
-
-    /**
-     * Represents an error response containing a message and the instant it occurred.
-     *
-     * @property message The error message.
-     * @property instant The instant the error occurred.
-     */
-    data class ErrorResponse(val message: String, val instant: Instant)
+    data class ErrorResponse(
+        val message: String,
+        val instant: Instant
+    )
 }
