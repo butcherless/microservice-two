@@ -10,8 +10,6 @@ import org.springframework.web.bind.annotation.*
 import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono
 import reactor.kotlin.core.publisher.toFlux
-
-
 /**
  * x /ms-two/airports'
  * x /ms-two/airports?sortedBy=iata'

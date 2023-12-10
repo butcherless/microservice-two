@@ -26,18 +26,34 @@ Accept: application/json
 GET http://localhost:8082/ms-two/airports?name=International
 Accept: application/json
 
-### GET Not Found for invalid iata airport code
+### Bad Request for invalid iata airport code
 GET http://localhost:8082/ms-two/airports/iata/ab
 Accept: application/json
 
-### Not Found for invalid icao airport code
+> {%
+    client.assert(response.status === 400, "Wrong response status");
+%}
+
+### Bad Request for invalid icao airport code
 GET http://localhost:8082/ms-two/airports/icao/tfn
 Accept: application/json
+
+> {%
+    client.assert(response.status === 400, "Wrong response status");
+%}
 
 ### Not Found for missing iata airport code
 GET http://localhost:8082/ms-two/airports/iata/zzz
 Accept: application/json
 
+> {%
+    client.assert(response.status === 404, "Wrong response status");
+%}
+
 ### Not Found for missing icao airport code
 GET http://localhost:8082/ms-two/airports/icao/zzzz
 Accept: application/json
+
+> {%
+    client.assert(response.status === 404, "Wrong response status");
+%}
