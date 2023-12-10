@@ -1,6 +1,5 @@
 package dev.cmartin.microservicetwo
 
-import jakarta.validation.constraints.Size
 import java.time.Instant
 
 object Model {

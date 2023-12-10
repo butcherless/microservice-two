@@ -39,11 +39,6 @@ interface AirportService {
     fun findByName(name: String): Flux<Airport>
 
     companion object {
-        enum class AirportCoding {
-            IATA,
-            ICAO
-        }
-
         enum class SortableProperties {
             IATA,
             ICAO,
